@@ -9,7 +9,7 @@ import SignIn from "./SingIn";
 import { Navigate, useNavigate } from "react-router-dom";
 
 //Default URL
-const API = "https://projetocomar.onrender.com/";
+const API = `${process.env.REACT_APP_BACKEND_URL}`;
 //EndPoint Projetos
 const EPPROJETOS = `${API}projeto`;
 //EndPoint Usuarios
@@ -42,7 +42,7 @@ function System({ usuario, setUsuario }) {
 
     const fetchData = async (auth) => {
       let response = await axios.get(
-        `https://projetocomar.onrender.com/usuario/${auth.id}`
+        `${process.env.REACT_APP_BACKEND_URL}/usuario/${auth.id}`
       );
       if (
         response.data == null ||

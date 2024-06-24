@@ -26,7 +26,7 @@ import axios from "axios";
 
 const pegarMovimentacoes = async (projeto) => {
   const res = await axios.get(
-    `https://projetocomar.onrender.com/projeto/${projeto.id}/movimentacoes`
+    `${process.env.REACT_APP_BACKEND_URL}/projeto/${projeto.id}/movimentacoes`
   );
   return res.data;
 };

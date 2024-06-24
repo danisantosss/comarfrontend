@@ -29,7 +29,7 @@ const style = {
 };
 
 const pegarUsuarios = async () => {
-  const res = await axios.get(`https://projetocomar.onrender.com/usuario/`);
+  const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/usuario/`);
   return res.data;
 };
 
@@ -75,7 +75,7 @@ export default function Usuarios() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password == passwordConfirm) {
-      let resp = await axios.post("https://projetocomar.onrender.com/usuario", {
+      let resp = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/usuario`, {
         email: user,
         senha: password,
       });
@@ -101,7 +101,7 @@ export default function Usuarios() {
 
   const deletarUsuario = React.useCallback(
     (id) => async () => {
-      await axios.delete(`https://projetocomar.onrender.com/usuario/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/usuario/${id}`);
       setTimeout(() => {
         setRows((prevData) => prevData.filter((data) => data.id !== id));
       });
