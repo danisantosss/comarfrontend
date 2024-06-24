@@ -11,9 +11,9 @@ import { Navigate, useNavigate } from "react-router-dom";
 //Default URL
 const API = "https://comarbackend-production.up.railway.app";
 //EndPoint Projetos
-const EPPROJETOS = `${API}projeto`;
+const EPPROJETOS = `/${API}projeto`;
 //EndPoint Usuarios
-const EPUSUARIOS = `${API}usuario`;
+const EPUSUARIOS = `/${API}usuario`;
 
 //Função para conectar a API
 async function connect() {
