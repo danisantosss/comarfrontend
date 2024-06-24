@@ -82,7 +82,7 @@ export const NewMovimentation = ({
 
     if (condicao) {
       let retorno = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/projeto/${projetoAtual}/movimentacoes/`,
+        `https://comarbackend-production.up.railway.app/projeto/${projetoAtual}/movimentacoes/`,
         newObj
       );
       setMovimentacao((prev) => [...prev, retorno.data])

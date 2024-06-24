@@ -108,7 +108,7 @@ export const DataTable = ({ projeto, movimentacao, setMovimentacao, isLoading })
       movimentacao.map(async (element) => {
         if(element.id == id){
           let dataFormatada = moment(element.dataMovimento).format('YYYY-MM-DD')
-          await axios.put(`${process.env.REACT_APP_BACKEND_URL}/projeto/${element.projetoId}/movimentacoes/${element.id}`,{"valor":updatedRow.valor,'dataMovimento':dataFormatada,'notaFiscal':updatedRow.notaFiscal,'fornecedor':updatedRow.fornecedor,'documento':updatedRow.documento,'historico':updatedRow.historico,'isEntrada':element.isEntrada})
+          await axios.put(`https://comarbackend-production.up.railway.app/projeto/${element.projetoId}/movimentacoes/${element.id}`,{"valor":updatedRow.valor,'dataMovimento':dataFormatada,'notaFiscal':updatedRow.notaFiscal,'fornecedor':updatedRow.fornecedor,'documento':updatedRow.documento,'historico':updatedRow.historico,'isEntrada':element.isEntrada})
           successMessage('valor atualizado')
         }
       })
@@ -169,7 +169,7 @@ export const DataTable = ({ projeto, movimentacao, setMovimentacao, isLoading })
   const deletarMovimentacao = useCallback(
     (id) => async () => {
       await axios.delete(
-        `${process.env.REACT_APP_BACKEND_URL}/projeto/${projeto.id}/movimentacoes/${id}`
+        `https://comarbackend-production.up.railway.app/projeto/${projeto.id}/movimentacoes/${id}`
       );
       setTimeout(() => {
         setTableData((prevData) => prevData.filter((data) => data.id !== id));

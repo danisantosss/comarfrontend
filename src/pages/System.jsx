@@ -9,7 +9,7 @@ import SignIn from "./SingIn";
 import { Navigate, useNavigate } from "react-router-dom";
 
 //Default URL
-const API = `${process.env.REACT_APP_BACKEND_URL}`;
+const API = "https://comarbackend-production.up.railway.app";
 //EndPoint Projetos
 const EPPROJETOS = `${API}projeto`;
 //EndPoint Usuarios
@@ -42,7 +42,7 @@ function System({ usuario, setUsuario }) {
 
     const fetchData = async (auth) => {
       let response = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/usuario/${auth.id}`
+        `https://comarbackend-production.up.railway.app/usuario/${auth.id}`
       );
       if (
         response.data == null ||

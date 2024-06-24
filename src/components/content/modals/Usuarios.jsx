@@ -29,7 +29,7 @@ const style = {
 };
 
 const pegarUsuarios = async () => {
-  const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/usuario/`);
+  const res = await axios.get(`https://comarbackend-production.up.railway.app/usuario/`);
   return res.data;
 };
 
@@ -75,7 +75,7 @@ export default function Usuarios() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password == passwordConfirm) {
-      let resp = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/usuario`, {
+      let resp = await axios.post(`https://comarbackend-production.up.railway.app/usuario`, {
         email: user,
         senha: password,
       });
@@ -101,7 +101,7 @@ export default function Usuarios() {
 
   const deletarUsuario = React.useCallback(
     (id) => async () => {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/usuario/${id}`);
+      await axios.delete(`https://comarbackend-production.up.railway.app/usuario/${id}`);
       setTimeout(() => {
         setRows((prevData) => prevData.filter((data) => data.id !== id));
       });

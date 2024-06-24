@@ -26,7 +26,7 @@ export const DeletProject = ({
 
   const deletarProjeto = async (ev) => {
     ev.preventDefault();
-    await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/projeto/${projetoID}`);
+    await axios.delete(`https://comarbackend-production.up.railway.app/projeto/${projetoID}`);
     const newProjetosArray = projetos.filter(
       (element) => element.id != projetoID
     );

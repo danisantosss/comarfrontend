@@ -28,7 +28,7 @@ export const EditProject = ({ open, handleClose, projetoNome, projetoID, setNome
       errorMessage();
     } else {
       handleClose();
-      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/projeto/${projetoID}`,{ nome, saldo })
+      await axios.put(`https://comarbackend-production.up.railway.app/projeto/${projetoID}`,{ nome, saldo })
      let newArray = projetos.map((element) =>  {if(element.id == projetoID) {
          element.nome = nome
          return element

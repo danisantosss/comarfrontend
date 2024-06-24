@@ -57,8 +57,7 @@ export default function SignIn({ setUsuario }) {
 
     try {
       let entrou = false;
-      console.log(process.env.REACT_APP_BACKEND_URL);
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/usuario/`);
+      const response = await axios.get(`https://comarbackend-production.up.railway.app/usuario/`);
       for (const element of response.data) {
         const senhaValida = await bcrypt.compare(usuario.senha, element.senha);
         if (element.email === usuario.email && senhaValida) {

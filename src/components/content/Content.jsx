@@ -26,7 +26,7 @@ import axios from "axios";
 
 const pegarMovimentacoes = async (projeto) => {
   const res = await axios.get(
-    `${process.env.REACT_APP_BACKEND_URL}/projeto/${projeto.id}/movimentacoes`
+    `https://comarbackend-production.up.railway.app/projeto/${projeto.id}/movimentacoes`
   );
   return res.data;
 };
