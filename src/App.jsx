@@ -3,11 +3,12 @@ import "./App.css";
 import System from "./pages/System";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/SingIn";
+import React, { useEffect } from "react";
 // import SignUp from "./components/login/SingUp";
 
 export default function App() {
   useEffect(() => {
-    document.title = "Gerenciador de Valores - COMAR";
+    document.title = "Título da Sua Aplicação";
   }, []);
   const [usuario, setUsuario] = useState("");
   //id de validacao
