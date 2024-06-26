@@ -7,7 +7,7 @@ import SignIn from "./pages/SingIn";
 
 export default function App() {
   useEffect(() => {
-    document.title = "Título da Sua Aplicação";
+    document.title = "Gerenciador de Valores - COMAR";
   }, []);
   const [usuario, setUsuario] = useState("");
   //id de validacao
