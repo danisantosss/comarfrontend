@@ -9,18 +9,11 @@ const SingUp = ({
   setPasswordConfirm,
   passwordConfirm,
   handleSubmit,
-  handleCloseModal,
 }) => {
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    await handleSubmit();
-    handleCloseModal();
-  };
-
   return (
     <>
       {" "}
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleSubmit}>
         <Stack direction="column" spacing={1} sx={{ pb: 2 }}>
           <Stack direction="row" spacing={1}>
             <Typography id="modal-modal-title" variant="h6">
