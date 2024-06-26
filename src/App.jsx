@@ -6,6 +6,9 @@ import SignIn from "./pages/SingIn";
 // import SignUp from "./components/login/SingUp";
 
 export default function App() {
+  useEffect(() => {
+    document.title = "Gerenciador de Valores - COMAR";
+  }, []);
   const [usuario, setUsuario] = useState("");
   //id de validacao
   const [validacao, setValidacao] = useState("")
