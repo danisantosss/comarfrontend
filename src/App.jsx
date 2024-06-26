@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import System from "./pages/System";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/SingIn";
-import React, { useEffect } from "react";
 // import SignUp from "./components/login/SingUp";
 
 export default function App() {
