@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import System from "./pages/System";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -6,9 +6,6 @@ import SignIn from "./pages/SingIn";
 // import SignUp from "./components/login/SingUp";
 
 export default function App() {
-  useEffect(() => {
-    document.title = "Gerenciador de Valores - COMAR";
-  }, []);
   const [usuario, setUsuario] = useState("");
   //id de validacao
   const [validacao, setValidacao] = useState("")
